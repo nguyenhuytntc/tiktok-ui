@@ -1,11 +1,13 @@
 import { Fragment } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { publicRouters, privateRouters } from '~/routes';
 import { DefaultLayout, HeaderOnly } from '~/components/Layout';
 function App() {
     return (
         <Router>
             <div className="App">
+                <Link to="/">Home</Link>
+                <Link to="/following">Following</Link>
                 <Routes>
                     {publicRouters.map((route, index) => {
                         let Layout = DefaultLayout;
