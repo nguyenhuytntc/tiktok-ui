@@ -6,6 +6,7 @@ import {
     faSpinner,
     faMagnifyingGlass,
     faSignIn,
+    faEllipsisVertical,
 } from '@fortawesome/free-solid-svg-icons';
 import style from './Header.module.scss';
 import images from '~/assets/images';
@@ -67,6 +68,32 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
+                    <Tippy
+                        interactive
+                        visible
+                        placement="bottom-end"
+                        render={(attrs) => (
+                            <div
+                                className={cx('menu-items')}
+                                tabIndex="-1"
+                                {...attrs}
+                            >
+                                <PopperWrapper>
+                                    <p className={cx('search-title')}>
+                                        Account
+                                    </p>
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                    <AccountItem />
+                                </PopperWrapper>
+                            </div>
+                        )}
+                    >
+                        <button className={cx('more-btn')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Tippy>
                 </div>
             </div>
         </header>
