@@ -6,8 +6,6 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <Link to="/">Home</Link>
-                <Link to="/following">Following</Link>
                 <Routes>
                     {publicRouters.map((route, index) => {
                         let Layout = DefaultLayout;
