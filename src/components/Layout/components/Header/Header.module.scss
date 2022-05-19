@@ -25,6 +25,10 @@
 .search-result {
     width: var(--search-width);
 }
+.search-title {
+    font-size: 1.4rem;
+    padding-left: 8px;
+}
 
 .search {
     display: flex;
@@ -89,3 +93,6 @@
         background-color: rgba(22, 24, 35, 0.06);
     }
 }
+// .custom-login {
+//     color: red;
+// }
