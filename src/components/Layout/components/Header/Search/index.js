@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import * as searchService from '~/apiServices/searchServices';
 import AccountItem from '~/components/AccountItem';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Search.module.scss';
@@ -28,21 +29,44 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
 
-        fetch(
-            `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
-                debounced,
-            )}&type=less`,
-        )
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+            const result = await searchService.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
+
+        // request
+        //     .get('users/search', {
+        //         params: {
+        //             q: debounced,
+        //             type: 'less',
+        //         },
+        //     })
+        //     .then((res) => {
+        //         setSearchResult(res.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => {
+        //         setLoading(false);
+        //     });
+
+        // fetch(
+        //     `https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(
+        //         debounced,
+        //     )}&type=less`,
+        // )
+        //     .then((res) => res.json())
+        //     .then((res) => {
+        //         setSearchResult(res.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => {
+        //         setLoading(false);
+        //     });
     }, [debounced]);
 
     const handleClear = () => {
