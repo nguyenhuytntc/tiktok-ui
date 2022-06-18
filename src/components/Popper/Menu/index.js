@@ -37,7 +37,6 @@ function Menu({
     });
     return (
         <Tippy
-            visible={true}
             offset={[12, 8]}
             interactive
             hideOnClick={hideOnClick}
