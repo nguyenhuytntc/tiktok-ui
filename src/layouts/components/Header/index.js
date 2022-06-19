@@ -31,7 +31,7 @@ const MENU_ITEMS = [
             title: 'Language',
             data: [
                 {
-                    type: 'languale',
+                    type: 'language',
                     code: 'en',
                     title: 'English',
                 },
@@ -144,7 +144,7 @@ function Header() {
                         >
                             {currentUser ? (
                                 <Image
-                                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/4c02180e32a16129a472c94a85aa2383~c5_100x100.jpeg?x-expires=1653339600&x-signature=Dul9zFql7xaM1x4YzIyrCfi7U1M%3D"
+                                    src="https://lh3.googleusercontent.com/ogw/ADea4I4g41IhDUbJjGfkH8wUWIHJ_q06ZwTeyaB95nLHvA=s32-c-mo"
                                     className={cx('user-avatar')}
                                     alt="Nguyen van A"
                                 />
