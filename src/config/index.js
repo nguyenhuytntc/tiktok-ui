@@ -1,7 +1,7 @@
 import routes from './routes';
 
-const configs = {
+const config = {
     routes,
 };
 
-export default configs;
+export default config;
