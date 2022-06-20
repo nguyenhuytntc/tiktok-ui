@@ -55,8 +55,7 @@ const MENU_ITEMS = [
 
 function Header() {
     //Login
-    const currentUser = () => {};
-
+    const currentUser = true;
     //Handle logic
     const handleMenuChange = (item) => {
         console.log(item);
